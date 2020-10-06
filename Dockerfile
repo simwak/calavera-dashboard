@@ -8,4 +8,4 @@ COPY . .
 RUN npm run build
 
 EXPOSE 8080
-CMD echo '{ "api": "$API" }' > ./dist/config; http-server dist
+CMD echo "{ \"api\": \"$API\" }" > ./dist/config; http-server dist
