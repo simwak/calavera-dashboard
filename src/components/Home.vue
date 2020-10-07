@@ -38,9 +38,7 @@
         <Services/>
       </v-tab-item>
       <v-tab-item key="user_management" >
-        
-        <!-- content -->
-
+        <UserManagement/>
       </v-tab-item>
     </v-tabs-items>
   </v-app>
@@ -49,10 +47,11 @@
 
 <script>
   import Services from './Services.vue'
+  import UserManagement from './UserManagement.vue'
   import ChangePassword from './ChangePassword.vue'
 
   export default {
-    components: { Services, ChangePassword },
+    components: { Services, UserManagement, ChangePassword },
     created () { 
       document.title = this.$config.displayName + " Dashboard"
     },
