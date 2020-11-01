@@ -158,9 +158,7 @@
         this.axios.delete('https://' + this.$config.domains.api + '/user/' + this.deleteUserObject.uid).then((response) => {
           if(response.data.status == "successfull") {
             
-            this.closeDelete
-
-            this.deleteUserObject = {}
+            this.closeDelete()
           } else {
             console.error(response.data)
           }
