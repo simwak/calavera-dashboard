@@ -146,7 +146,7 @@
         this.password = Math.random().toString(36).substring(2)
 
         this.axios.put('https://' + this.$config.domains.api + '/editor', { password: this.password }).then((response) => {
-          if(response.data.status == 'successfull') {
+          if(response.data.status == 'successful') {
             this.getEditorStatus()
             this.showPasswordSnackbar = true
           } else if (response.data.status == 'waiting-for-deletion') {
@@ -161,7 +161,7 @@
       },
       deleteEditor() {
         this.axios.delete('https://' + this.$config.domains.api + '/editor', ).then((response) => {
-          if(response.data.status == 'successfull') {
+          if(response.data.status == 'successful') {
             this.getEditorStatus()
           } else {
             console.error(response)
@@ -170,7 +170,7 @@
       },
       stopEditor() {
         this.axios.post('https://' + this.$config.domains.api + '/editor/stop', ).then((response) => {
-          if(response.data.status == 'successfull') {
+          if(response.data.status == 'successful') {
             this.getEditorStatus()
           } else {
             console.error(response)
@@ -179,7 +179,7 @@
       },
       startEditor() {
         this.axios.post('https://' + this.$config.domains.api + '/editor/start', ).then((response) => {
-          if(response.data.status == 'successfull') {
+          if(response.data.status == 'successful') {
             this.getEditorStatus()
           } else {
             console.error(response)
